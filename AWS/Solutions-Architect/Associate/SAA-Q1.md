@@ -444,3 +444,122 @@ The other options wouldn't work because:
 - VPC Peering (D) is for connecting VPCs, not accessing the internet
 </details>
 ---
+
+### A company has a Lambda function that processes images. Some images can take up to 15 minutes to process. Which solution would help handle these long-running tasks?
+
+A) Increase the Lambda timeout to 15 minutes<br>
+B) Use Step Functions to orchestrate multiple Lambda functions<br>
+C) Enable Lambda Provisioned Concurrency<br>
+D) Configure Lambda with higher memory allocation
+
+<details>
+  <summary><i>Reveal answer</i></summary>
+
+**The correct answer is B) Use Step Functions to orchestrate multiple Lambda functions**
+
+Explanation:
+- Lambda has a maximum timeout of 15 minutes
+- Step Functions can:
+  - Break down long-running processes into smaller steps
+  - Handle timeouts and retries
+  - Maintain state between executions
+  - Run workflows that last up to 1 year
+
+The other options wouldn't solve the problem:
+- (A) wouldn't work because Lambda functions cannot run longer than 15 minutes
+- Provisioned Concurrency (C) improves cold start times but doesn't extend runtime
+- Higher memory (D) might speed up execution but won't extend the 15-minute limit
+</details>
+---
+
+### A company needs to host a web application that stores user session data. The application must be highly available and maintain session data if an instance fails. Which combination should they use?
+
+A) Application Load Balancer with sticky sessions<br>
+B) Network Load Balancer with sticky sessions and ElastiCache<br>
+C) Application Load Balancer with ElastiCache<br>
+D) Network Load Balancer with shared EBS volume
+
+<details>
+  <summary><i>Reveal answer</i></summary> 
+
+**The correct answer is C) Application Load Balancer with ElastiCache**
+
+Explanation:
+- Application Load Balancer (ALB) provides layer 7 load balancing
+- ElastiCache provides in-memory session storage that's:
+  - Highly available
+  - Accessible from all instances
+  - Sub-millisecond latency
+  - Automatically scalable
+
+The other options are less suitable because:
+- Sticky sessions (A) don't protect against instance failures
+- Network Load Balancer (B, D) is Layer 4 and not ideal for web applications
+- Shared EBS volume (D) can only attach to one instance at a time
+</details>
+---
+
+### A company runs a data processing application that operates on highly sensitive data. They need to ensure the encryption keys are stored in a FIPS 140-2 Level 3 validated hardware security module (HSM). Which service should they use?
+
+A) AWS KMS<br>
+B) CloudHSM<br>
+C) Secrets Manager<br>
+D) Systems Manager Parameter Store<br>
+
+<details>
+  <summary><i>Reveal answer</i></summary> 
+
+**The correct answer is B) CloudHSM**
+
+Explanation:
+- AWS CloudHSM provides dedicated Hardware Security Modules (HSMs)
+- It's the only AWS service that offers FIPS 140-2 Level 3 validated HSMs
+- Gives you single-tenant access to the physical HSM device
+- You have complete control over encryption keys
+
+The other options don't meet the FIPS 140-2 Level 3 requirement:
+- AWS KMS (A) is FIPS 140-2 Level 2 validated
+- Secrets Manager (C) uses KMS for encryption
+- Parameter Store (D) also uses KMS for encryption when using SecureString
+
+This is a technical question about a specific compliance requirement. It's good to remember that CloudHSM is always the answer when you see requirements for:
+- FIPS 140-2 Level 3
+- Dedicated HSM hardware
+- Complete control over key management
+</details>
+---
+
+### A company needs to implement a solution for their website that can survive the failure of an entire AWS region. Which combination of services should they use? (Select TWO)
+
+A) Route 53 with health checks<br>
+B) Application Load Balancer<br>
+C) Multi-region Active-Active deployment<br>
+D) CloudFront with S3 bucket<br>
+E) Single region with multiple Availability Zones
+
+<details>
+  <summary><i>Reveal answer</i></summary>
+
+**The correct answers are A and C:**
+- Route 53 with health checks
+- Multi-region Active-Active deployment
+
+Explanation:
+- Route 53 with health checks can:
+  - Monitor endpoint health
+  - Automatically route traffic away from failed regions
+  - Provide global DNS resolution
+  - Support various routing policies
+
+- Multi-region Active-Active deployment:
+  - Runs the application simultaneously in multiple regions
+  - Provides true region-level disaster recovery
+  - Allows for serving users from the closest region
+  - Enables business continuity during regional failures
+
+The other options don't provide region-level failure protection:
+- Application Load Balancer (B) is regional, not global
+- CloudFront with S3 (D) is good for static content but not complete applications
+- Multiple AZs (E) only protect against AZ failures within a region
+</details>
+---
