@@ -18,6 +18,7 @@ S3 Intelligent-Tiering is ideal for this scenario because:
 - This happens without performance impact or operational overhead
 - It's specifically designed for workloads with changing access patterns
 </details>
+
 ---
 
 ### A company is running a web application that processes sensitive payment information. Which TWO security measures should they implement to protect data in transit? (Select TWO)
@@ -40,6 +41,7 @@ To protect data in transit, you need end-to-end encryption:
 - SSL/TLS termination at the ALB (answer A) encrypts traffic between clients and the load balancer
 - SSL/TLS certificates on EC2 (answer C) encrypts traffic between the load balancer and the instances
 </details>
+
 ---
 
 ### A solutions architect needs to ensure that all new EBS volumes created in the account are automatically encrypted. Which approach requires the LEAST operational overhead?
@@ -66,6 +68,7 @@ The other options would be more complex:
 - AWS Config rule (C) would only detect non-compliance, not prevent it
 - CloudTrail (D) would only provide logging, not enforcement
 </details>
+
 ---
 
 ### A company has a three-tier web application that needs to scale based on demand. The application servers need to scale faster than the database tier. Which combination of AWS services should they use?
@@ -91,6 +94,7 @@ The other options are less suitable because:
 - Network Load Balancer (C, D) is better suited for TCP/UDP traffic
 - Aurora Auto Scaling (D) would work but is more expensive and may be overkill
 </details>
+
 ---
 
 ### A company has compliance requirements to encrypt all data at rest. They use an S3 bucket for storing application data. Which methods can be used to ensure all objects uploaded to the bucket are encrypted? (Select TWO)
@@ -118,6 +122,7 @@ The other options don't help with encryption:
 - MFA Delete (D) adds deletion protection
 - Lifecycle policies (E) manage object transitions and expiration
 </details>
+
 ---
 
 ### A company needs to run a batch processing workload that can be interrupted and resumed without issues. The workload needs to be cost-effective and complete within 24 hours. Which EC2 instance purchasing option should they choose?
@@ -138,6 +143,7 @@ Explanation:
 - The 24-hour completion window allows for potential interruptions
 - Batch processing is an ideal use case for Spot Instances
 </details>
+
 ---
 
 ### A solutions architect needs to design a solution for storing session state for a web application. The solution must be highly available and provide sub-millisecond latency. Which service should they use?
@@ -163,6 +169,7 @@ The other options are less suitable because:
 - RDS Multi-AZ (C) is too slow for session state management
 - S3 (D) has too high latency for session management
 </details>
+
 ---
 
 ### A company wants to migrate its on-premises application to AWS. The application requires shared file storage that can be mounted on multiple EC2 instances concurrently. Which storage solution should they use?
@@ -188,6 +195,7 @@ The other options are not suitable because:
 - S3 (B) is object storage and cannot be mounted as a file system
 - Instance Store (D) is temporary storage tied to a single instance
 </details>
+
 ---
 
 ### A company needs to design a disaster recovery solution for its application. They require a Recovery Time Objective (RTO) of less than 10 minutes and a Recovery Point Objective (RPO) of less than 1 minute. Which disaster recovery strategy should they implement?
@@ -210,6 +218,7 @@ Explanation:
   - No downtime during failover
   - Traffic distribution across multiple regions
 </details>
+
 ---
 
 ### A company runs a critical application that must be highly available. Which combination of AWS services should they use to monitor the application and receive notifications when issues occur? (Select TWO)
@@ -237,6 +246,7 @@ The other options are less suitable because:
 - SQS (D) is for application message queuing
 - AWS Config (E) tracks resource configuration changes
 </details>
+
 ---
 
 ### A company stores sensitive data in an S3 bucket. They need to ensure that objects are encrypted with keys managed by their organization. Which encryption solution should they use?
@@ -267,6 +277,7 @@ The other options:
   - Places encryption burden on the application
   - May impact performance
 </details>
+
 ---
 
 ### A company runs a web application that needs to store session data with automatic scaling and high availability. The data must persist after instance termination. Which solution should they use?
@@ -293,6 +304,7 @@ The other options are less suitable because:
 - Instance store volumes (C) are temporary and data is lost on instance termination
 - EFS (D) while persistent and shared, has higher latency and is more suitable for file storage
 </details>
+
 ---
 
 ### A company needs to analyze large amounts of data stored in S3 using SQL queries. They want the most cost-effective solution that doesn't require managing servers. Which service should they use?
@@ -323,6 +335,7 @@ The other options:
   - Better suited for complex queries on structured data warehouses
   - Requires data loading before querying
 </details>
+
 ---
 
 ### A solutions architect needs to connect multiple VPCs across different AWS regions for a global application. The solution must provide the highest available bandwidth with consistent latency. Which service should they use?
@@ -353,6 +366,7 @@ The other options:
   - Requires managing multiple peering connections
   - Doesn't provide the same level of routing control as Transit Gateway
 </details>
+
 ---
 
 ### A company needs to set up a hybrid cloud architecture where they can access their AWS VPC resources from their on-premises network securely. Which TWO services can provide this connectivity? (Select TWO)
@@ -418,7 +432,9 @@ The other options are less suitable because:
 - Spot Instances (C) aren't reliable enough for baseline capacity
 - Dedicated Hosts (E) would significantly increase costs
 </details>
+
 ---
+
 ### A company has a VPC with both public and private subnets. The instances in the private subnet need to download software updates from the internet, but should not be directly accessible from the internet. Which combination of resources should be used?
 
 A) Internet Gateway and Route Table<br>
@@ -443,6 +459,7 @@ The other options wouldn't work because:
 - VPC Endpoint (C) is for accessing AWS services, not the internet
 - VPC Peering (D) is for connecting VPCs, not accessing the internet
 </details>
+
 ---
 
 ### A company has a Lambda function that processes images. Some images can take up to 15 minutes to process. Which solution would help handle these long-running tasks?
@@ -470,6 +487,7 @@ The other options wouldn't solve the problem:
 - Provisioned Concurrency (C) improves cold start times but doesn't extend runtime
 - Higher memory (D) might speed up execution but won't extend the 15-minute limit
 </details>
+
 ---
 
 ### A company needs to host a web application that stores user session data. The application must be highly available and maintain session data if an instance fails. Which combination should they use?
@@ -497,6 +515,7 @@ The other options are less suitable because:
 - Network Load Balancer (B, D) is Layer 4 and not ideal for web applications
 - Shared EBS volume (D) can only attach to one instance at a time
 </details>
+
 ---
 
 ### A company runs a data processing application that operates on highly sensitive data. They need to ensure the encryption keys are stored in a FIPS 140-2 Level 3 validated hardware security module (HSM). Which service should they use?
@@ -527,6 +546,7 @@ This is a technical question about a specific compliance requirement. It's good 
 - Dedicated HSM hardware
 - Complete control over key management
 </details>
+
 ---
 
 ### A company needs to implement a solution for their website that can survive the failure of an entire AWS region. Which combination of services should they use? (Select TWO)
@@ -562,4 +582,5 @@ The other options don't provide region-level failure protection:
 - CloudFront with S3 (D) is good for static content but not complete applications
 - Multiple AZs (E) only protect against AZ failures within a region
 </details>
+
 ---
