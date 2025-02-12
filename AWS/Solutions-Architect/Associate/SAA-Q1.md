@@ -3,9 +3,11 @@
 A) Amazon S3 Standard<br>
 B) Amazon S3 Standard-Infrequent Access<br>
 C) Amazon S3 Intelligent-Tiering<br>
-D) Amazon S3 Glacier<br>
+D) Amazon S3 Glacier<be>
 
-
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is C) Amazon S3 Intelligent-Tiering**
 
 Explanation:
@@ -15,6 +17,7 @@ S3 Intelligent-Tiering is ideal for this scenario because:
 - Files that become infrequent are automatically moved to the infrequent access tier
 - This happens without performance impact or operational overhead
 - It's specifically designed for workloads with changing access patterns
+</details>
 ---
 
 ### A company is running a web application that processes sensitive payment information. Which TWO security measures should they implement to protect data in transit? (Select TWO)
@@ -25,6 +28,9 @@ C) Configure SSL/TLS certificates on EC2 instances<br>
 D) Enable default encryption on S3 buckets<br>
 E) Use AWS Shield Standard
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answers are A and C:**
 - Enable SSL/TLS termination on the Application Load Balancer
 - Configure SSL/TLS certificates on EC2 instances
@@ -33,6 +39,7 @@ Explanation:
 To protect data in transit, you need end-to-end encryption:
 - SSL/TLS termination at the ALB (answer A) encrypts traffic between clients and the load balancer
 - SSL/TLS certificates on EC2 (answer C) encrypts traffic between the load balancer and the instances
+</details>
 ---
 
 ### A solutions architect needs to ensure that all new EBS volumes created in the account are automatically encrypted. Which approach requires the LEAST operational overhead?
@@ -42,6 +49,9 @@ B) Enable EBS encryption by default in the region<br>
 C) Create an AWS Config rule<br>
 D) Use AWS CloudTrail to monitor volume creation
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is B) Enable EBS encryption by default in the region**
 
 Explanation:
@@ -55,7 +65,7 @@ The other options would be more complex:
 - Lambda function (A) would require code maintenance and error handling
 - AWS Config rule (C) would only detect non-compliance, not prevent it
 - CloudTrail (D) would only provide logging, not enforcement
-
+</details>
 ---
 
 ### A company has a three-tier web application that needs to scale based on demand. The application servers need to scale faster than the database tier. Which combination of AWS services should they use?
@@ -65,6 +75,9 @@ B) EC2 Auto Scaling group with Application Load Balancer and RDS Read Replicas<b
 C) EC2 Auto Scaling group with Network Load Balancer and RDS Multi-AZ<br>
 D) EC2 Auto Scaling group with Network Load Balancer and Aurora Auto Scaling
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is B) EC2 Auto Scaling group with Application Load Balancer and RDS Read Replicas**
 
 Explanation:
@@ -77,7 +90,7 @@ The other options are less suitable because:
 - RDS Multi-AZ (A, C) provides high availability but not scalability
 - Network Load Balancer (C, D) is better suited for TCP/UDP traffic
 - Aurora Auto Scaling (D) would work but is more expensive and may be overkill
-
+</details>
 ---
 
 ### A company has compliance requirements to encrypt all data at rest. They use an S3 bucket for storing application data. Which methods can be used to ensure all objects uploaded to the bucket are encrypted? (Select TWO)
@@ -88,6 +101,9 @@ C) Enable versioning on the S3 bucket<br>
 D) Enable MFA Delete on the S3 bucket<br>
 E) Configure a lifecycle policy
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answers are A and B:**
 - Enable default encryption on the S3 bucket
 - Create a bucket policy that denies PutObject requests without encryption headers
@@ -101,7 +117,7 @@ The other options don't help with encryption:
 - Versioning (C) maintains multiple versions of objects
 - MFA Delete (D) adds deletion protection
 - Lifecycle policies (E) manage object transitions and expiration
-
+</details>
 ---
 
 ### A company needs to run a batch processing workload that can be interrupted and resumed without issues. The workload needs to be cost-effective and complete within 24 hours. Which EC2 instance purchasing option should they choose?
@@ -109,8 +125,11 @@ The other options don't help with encryption:
 A) On-Demand Instances<br>
 B) Reserved Instances<br>
 C) Spot Instances<br>
-D) Dedicated Hosts<br>
+D) Dedicated Hosts<be>
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is C) Spot Instances**
 
 Explanation:
@@ -118,7 +137,7 @@ Explanation:
 - Since the workload can be interrupted and resumed, it's perfect for Spot Instances
 - The 24-hour completion window allows for potential interruptions
 - Batch processing is an ideal use case for Spot Instances
-
+</details>
 ---
 
 ### A solutions architect needs to design a solution for storing session state for a web application. The solution must be highly available and provide sub-millisecond latency. Which service should they use?
@@ -126,8 +145,11 @@ Explanation:
 A) Amazon DynamoDB<br>
 B) Amazon ElastiCache for Redis<br>
 C) Amazon RDS Multi-AZ<br>
-D) Amazon S3<br>
+D) Amazon S3<be>
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is B) Amazon ElastiCache for Redis**
 
 Explanation:
@@ -140,7 +162,7 @@ The other options are less suitable because:
 - DynamoDB (A) has millisecond latency, not sub-millisecond
 - RDS Multi-AZ (C) is too slow for session state management
 - S3 (D) has too high latency for session management
-
+</details>
 ---
 
 ### A company wants to migrate its on-premises application to AWS. The application requires shared file storage that can be mounted on multiple EC2 instances concurrently. Which storage solution should they use?
@@ -150,6 +172,9 @@ B) Amazon S3<br>
 C) Amazon EFS<br>
 D) Instance Store
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is C) Amazon EFS**
 
 Explanation:
@@ -162,7 +187,7 @@ The other options are not suitable because:
 - EBS volumes (A) can only be attached to one EC2 instance at a time
 - S3 (B) is object storage and cannot be mounted as a file system
 - Instance Store (D) is temporary storage tied to a single instance
-
+</details>
 ---
 
 ### A company needs to design a disaster recovery solution for its application. They require a Recovery Time Objective (RTO) of less than 10 minutes and a Recovery Point Objective (RPO) of less than 1 minute. Which disaster recovery strategy should they implement?
@@ -172,6 +197,9 @@ B) Pilot Light<br>
 C) Warm Standby<br>
 D) Multi-Site Active/Active
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is D) Multi-Site Active/Active**
 
 Explanation:
@@ -181,7 +209,7 @@ Explanation:
   - Near-zero RPO (continuous replication)
   - No downtime during failover
   - Traffic distribution across multiple regions
-
+</details>
 ---
 
 ### A company runs a critical application that must be highly available. Which combination of AWS services should they use to monitor the application and receive notifications when issues occur? (Select TWO)
@@ -192,6 +220,9 @@ C) Amazon SNS for notifications<br>
 D) Amazon SQS for message queuing<br>
 E) AWS Config for resource tracking
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answers are A and C:**
 - Amazon CloudWatch for metrics and alarms
 - Amazon SNS for notifications
@@ -205,7 +236,7 @@ The other options are less suitable because:
 - CloudTrail (B) is for API activity auditing
 - SQS (D) is for application message queuing
 - AWS Config (E) tracks resource configuration changes
-
+</details>
 ---
 
 ### A company stores sensitive data in an S3 bucket. They need to ensure that objects are encrypted with keys managed by their organization. Which encryption solution should they use?
@@ -215,6 +246,9 @@ B) Server-Side Encryption with KMS keys stored in AWS KMS (SSE-KMS)<br>
 C) Server-Side Encryption with Customer Provided Keys (SSE-C)<br>
 D) Client-Side Encryption with keys managed by the customer
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is B) Server-Side Encryption with KMS keys stored in AWS KMS (SSE-KMS)**
 
 Explanation:
@@ -232,7 +266,7 @@ The other options:
   - Requires significant development effort
   - Places encryption burden on the application
   - May impact performance
-
+</details>
 ---
 
 ### A company runs a web application that needs to store session data with automatic scaling and high availability. The data must persist after instance termination. Which solution should they use?
@@ -240,8 +274,11 @@ The other options:
 A) Store session data on EBS volumes<br>
 B) Store session data in DynamoDB<br>
 C) Store session data on instance store volumes<br>
-D) Store session data on EFS<br>
+D) Store session data on EFS<be>
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is B) Store session data in DynamoDB**
 
 Explanation:
@@ -255,7 +292,7 @@ The other options are less suitable because:
 - EBS volumes (A) can only attach to one EC2 instance at a time
 - Instance store volumes (C) are temporary and data is lost on instance termination
 - EFS (D) while persistent and shared, has higher latency and is more suitable for file storage
-
+</details>
 ---
 
 ### A company needs to analyze large amounts of data stored in S3 using SQL queries. They want the most cost-effective solution that doesn't require managing servers. Which service should they use?
@@ -263,8 +300,11 @@ The other options are less suitable because:
 A) Amazon RDS<br>
 B) Amazon Redshift<br>
 C) Amazon Athena<br>
-D) Amazon EMR<br>
+D) Amazon EMR<be>
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is C) Amazon Athena**
 
 Explanation:
@@ -282,7 +322,7 @@ The other options:
   - Has fixed costs even when not in use
   - Better suited for complex queries on structured data warehouses
   - Requires data loading before querying
-
+</details>
 ---
 
 ### A solutions architect needs to connect multiple VPCs across different AWS regions for a global application. The solution must provide the highest available bandwidth with consistent latency. Which service should they use?
@@ -292,6 +332,9 @@ B) AWS Transit Gateway<br>
 C) AWS Direct Connect<br>
 D) AWS Transit Gateway Inter-Region Peering
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is D) AWS Transit Gateway Inter-Region Peering**
 
 Explanation:
@@ -309,8 +352,7 @@ The other options:
   - Becomes complex to manage as the number of VPCs increases
   - Requires managing multiple peering connections
   - Doesn't provide the same level of routing control as Transit Gateway
-
-
+</details>
 ---
 
 ### A company needs to set up a hybrid cloud architecture where they can access their AWS VPC resources from their on-premises network securely. Which TWO services can provide this connectivity? (Select TWO)
@@ -321,6 +363,9 @@ C) AWS Site-to-Site VPN<br>
 D) AWS ClientVPN<br>
 E) AWS Global Accelerator
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answers are A and C:**
 - AWS Direct Connect
 - AWS Site-to-Site VPN
@@ -340,7 +385,7 @@ The other options are not suitable for hybrid connectivity because:
 - API Gateway (B) is for managing APIs, not network connectivity
 - ClientVPN (D) is for individual user remote access
 - Global Accelerator (E) improves availability and performance but doesn't provide private connectivity
-
+</details>
 ---
 
 ### A company runs a web application that needs to accommodate rapidly changing workloads. During peak hours, the application receives 10 times more traffic than during off-peak hours. Which of the following would help manage costs while ensuring performance? (Select TWO)
@@ -351,9 +396,12 @@ C) Use Spot Instances for the baseline capacity<br>
 D) Use Auto Scaling groups with target-tracking policies<br>
 E) Use dedicated hosts for all instances
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answers are A and D:**
 - Use Reserved Instances for the baseline capacity
-- Use Auto Scaling groups with target tracking policies
+- Use Auto Scaling groups with target-tracking policies
 
 Explanation:
 - Reserved Instances (A) provide significant cost savings for baseline capacity
@@ -369,7 +417,7 @@ The other options are less suitable because:
 - On-Demand Instances (B) for all servers would be more expensive
 - Spot Instances (C) aren't reliable enough for baseline capacity
 - Dedicated Hosts (E) would significantly increase costs
-
+</details>
 ---
 ### A company has a VPC with both public and private subnets. The instances in the private subnet need to download software updates from the internet, but should not be directly accessible from the internet. Which combination of resources should be used?
 
@@ -378,6 +426,9 @@ B) NAT Gateway and Route Table<br>
 C) VPC Endpoint and Security Group<br>
 D) VPC Peering and Network ACL
 
+<details>
+  <summary><i>Reveal answer</i></summary>
+  
 **The correct answer is B) NAT Gateway and Route Table**
 
 Explanation:
@@ -391,5 +442,5 @@ The other options wouldn't work because:
 - Internet Gateway (A) would make the instances directly accessible from the internet
 - VPC Endpoint (C) is for accessing AWS services, not the internet
 - VPC Peering (D) is for connecting VPCs, not accessing the internet
-
+</details>
 ---
